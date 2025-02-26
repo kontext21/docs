@@ -2,97 +2,79 @@
 title: "FAQs"
 description: ""
 ---
-Kontext21 is the AI infrastructure layer for user context. 
 
-K21 SDK makes it easy to personalize software by capturing & retrieving end-user context from sources like their screen, browser and many more. 
+Kontext21 is the AI infrastructure layer for user context.
+
+K21 SDK makes it easy to personalize software by capturing & retrieving end-user context from sources like their screen, browser and many more.
 
 <AccordionGroup>
   <Accordion title="Which operating systems do you support?">
-   We are focused on MacOS and Windows. 
-   
-   With Linux and mobile coming soon. Please reach out if you want to build for them. 
+    We are focused on MacOS and Windows.
+
+    With Linux and mobile coming soon. Please reach out if you want to build for them.
   </Accordion>
 
   <Accordion title="How does this compare to computer use and browser use?" icon="alien-8bit">
-    Check out the [Accordion](/content/components/accordions) docs for all the supported props.
+    With computer use and browser use there is usually no way to get back structured data about what's going on for the user. Kontext21 can be used to trigger computer use or also to build your own, highly customized version of computer use.
   </Accordion>
 
-  <Accordion title="FAQ without Icon">
-    Check out the [Accordion](/content/components/accordions) docs for all the supported props.
+  <Accordion title="Why should we use this instead of integrating directly with model XY?">
+    You can always re-invent the wheel. Kontext21 provides model agnostic infrastructure layer to build context aware software applications. Using a model is only part of the work to be done.
+
+    * Received structured output
+
+    * Merge with different sources of context both from within your software (known entities such as contacts, projects etc.) but also from outside your software (see our list of integrations
+
+    * Both experimentation as well as testing & observability are crucial.
+
+    * Remove PII information
+
+    * Optimize for cost
+
+    * Easy experimentation with different models&#x9;
+  </Accordion>
+
+  <Accordion title="What are the development stages for context aware AI apps" defaultOpen={false}>
+    1. Experimentation
+
+    2. Implement
+
+    3. Beta Launch - Make it on-demand, side-by-side installer
+
+    4. Production Launch - Include in main installer
+
+    5. Continuous Improvement
+  </Accordion>
+
+  <Accordion title="What will pricing be like?" defaultOpen={false}>
+    Coming soon. We'll offer affordable, value based pricing. We understand that you have business to run. Our focus is creating more value for your customers and users.
+  </Accordion>
+
+  <Accordion title="What are related Industries?" defaultOpen={false}>
+    * OCR & Document OCR
+
+    * Screen Scraping & Web Scraping
+
+    * RPA
+
+    * Computer & Browser Use
+
+
+  </Accordion>
+
+  <Accordion title="How much CPU & memory resources does it take?" defaultOpen={false}>
+    Depends on the use case but less than when 10% running with 1 fps.&#x20;
+  </Accordion>
+
+  <Accordion title="What about privacy?" defaultOpen={false}>
+    * Pattern: Inform the user about what data is collect and why
+
+    * Pattern: Inform end-user when there data is accessed = prevents “spying”
+
+    * Pattern: Keep the user in control - Create local drafts before sharing the data with other users. sharing with consent, Chinese wall (nothing from one side leaks to the other. As the user I can be sure that what gets analyzed locally is not made available to my employer & colleagues).
+
+    * Pattern: Let user inspect the recorded data
+
+    * User trust often means “local first”
   </Accordion>
 </AccordionGroup>
-
-
-With computer use and browser use there is usually no way to get back structured data about what’s going on for the user. Kontext21 can be used to trigger computer use or also to build your own, highly customized version of computer use.
-
-## Why should we use this instead of integrating directly with model XY?
-
-You can always re-invent the wheel. Kontext21 provides model agnostic infrastructure layer to build context aware software applications. Using a model is only part of the work to be done. 
-
-- Received structured output
-- Merge with different sources of context both from within your software (known entities such as contacts, projects etc.) but also from outside your software (see our list of integrations
-- Both experimentation as well as testing & observability are crucial.
-- Remove PII information
-- Optimize for cost
-- Easy experimentation with different models
-
-## What are the development stages for context aware AI Apps
-
-1. Experimentation
-2. Implement
-3. Beta Launch - Make it on-demand, side-by-side installer
-4. Production Launch - Include in main installer
-5. Continuous Improvement
-
-## What will pricing be like?
-
-Coming soon. We’ll offer affordable, value based pricing. We understand that you have business to run. Our focus is creating more value for your customers and users.  
-
-## Related industries
-
-- OCR & Document OCR
-- Screen Scraping & Web Scraping
-- RPA
-- Computer & Browser Use
-  <Accordion title="Example - AI Task & Time Tracking" defaultOpen={false} icon="circle-info">
-    * Todo Inc. offers a todo & time tracking web app
-
-    * Todo's users are frustrated to manually start & stop tasks <br/> &lt;&gt; Instead they expect AI and automation!
-
-    * With Kontext21 Todo can build automated task tracking easily
-  </Accordion>
-  <Accordion title="Questions you can answer with K21 SDK" defaultOpen={false} icon="question">
-  K21 SDK let’s developers answer questions like:
-
-    * “What is my user currently doing?”
-
-    * “Which contacts are important to her?”
-
-    * “What is his most likely next action?”
-  </Accordion>
-</AccordionGroup>
-
-
-## Let's build together
-
-<CardGroup cols={2}>
-  <Card title="Quickstart" icon="pen-to-square" href="/quickstart">
-    Follow the this guide to get started
-  </Card>
-
-  <Card title="Get Inspiration" icon="stars" href="https://kontext21.com/use-case-gallery">
-    Explore our Use Case Gallery
-  </Card>
-
-  <Card title="Playground (coming soon)" icon="image" href="">
-    
-  </Card>
-
-  
-  <Card title="Find us on GitHub" icon="github" href="https://github.com/kontext21/context/">
-  </Card>
-
-  <Card title="Join us on Discord" icon="discord" href="https://discord.gg/qYUADWRMRX">
-  </Card>
-
-</CardGroup>
