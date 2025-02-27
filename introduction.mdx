@@ -38,7 +38,7 @@ npm install k21
 ```
 import { kontext } from 'k21'
 
-kontext = capture()
+kontext = kontext.capture()
             .ocr()
             .start()
 ```
@@ -46,12 +46,13 @@ kontext = capture()
 ## Consume
 
 ```
-button_click():
-    alert("The most frequent word is: " + word_count(kontext.all()).top(1))
+const buttonClick = (): void => {
+  const frequentWord = wordCount(context.all()).top(1);
+  alert(`The most frequent word is: ${frequentWord}`);
+};
 ```
 
-## Let's build together
-
+# Next Steps
 <CardGroup cols={2}>
   <Card title="Quickstart" icon="pen-to-square" href="/quickstart">
     Follow the this guide to get started
@@ -62,6 +63,11 @@ button_click():
   </Card>
 
   <Card title="Playground (coming soon)" icon="image" href="" />
+
+</CardGroup>
+# Let's build together
+
+<CardGroup cols={2}>
 
   <Card title="Find us on GitHub" icon="github" href="https://github.com/kontext21/context/" />
 
