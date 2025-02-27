@@ -27,6 +27,31 @@ K21 SDK makes it easy to capture & retrieve end-user context from sources like t
   </Accordion>
 </AccordionGroup>
 
+## First Steps
+
+1. Install it
+
+```
+npm install k21
+```
+
+1. Initialize
+
+```
+import { kontext } from 'k21'
+
+kontext = capture()
+            .ocr()
+            .start()
+```
+
+1. Consume
+
+```
+button_click():
+    alert("The most frequent word is: " + word_count(kontext.all()).top(1))
+```
+
 ## Let's build together
 
 <CardGroup cols={2}>
