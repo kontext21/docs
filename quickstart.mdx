@@ -1,29 +1,26 @@
 ---
 title: 'Quickstart'
-description: 'Start building awesome documentation in under 5 minutes'
+description: 'Start building truly user-centric software in under 5 minutes'
 ---
 
-## Understand our SDK
-
-For now we have 2 components available for the SDK. 
-
-TODO: Download link to the binaries
-
-The below comes from the Readme of the [k21-screen repository](https://github.com/kontext21/k21-screen/blob/main/README.md).
-
-k21-screen - A CLI tool to handle screen captures
-k21-processor - A CLI tool to handle processing of screen captures
-
-## Usage
+## Install
 
 ```bash
-./k21-screen
-./k21-processor --mp4 file.mp4
-./k21-processor --image file.png
-./k21-screen --stdout | ./k21-processor --stdin
+npm install @kontext21/k21
 ```
-Will run and capture until process is stopp
 
-## Options
+## Initialize
 
-- `--fps`: Screen refresh rate in fps (frames per second) - default: 1
+```bash
+k21.query(1)
+```
+Returns all data currently on the screen.
+
+## Components of our SDK
+
+- [k21 SDK](https://github.com/kontext21/k21) is the main repository for the SDK. [Readme](https://github.com/kontext21/k21/blob/main/README.md).
+  - k21-screen - A CLI tool to handle screen captures
+  - k21-processor - A CLI tool to handle processing of screen captures
+  - k21-server - A server to handle the processing of screen captures with the processor and returning the results
+- [k21-node](https://github.com/kontext21/k21-node) - A Node.js Library for the SDK
+- [K21-node sample code](https://github.com/kontext21/k21-node-sample) - Sample code for using the k21-node library

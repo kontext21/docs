@@ -25,6 +25,12 @@
             "pages": [
               "k21-node",
             ]
+          },
+          {
+            "group": "SDKs",
+            "pages": [
+              "sdks/k21-node"
+            ]
           }
         ]
       }
