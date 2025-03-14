@@ -20,6 +20,10 @@
               "quickstart",
               "playground",
               "faqs"
+            ],
+            "group": "SDKs",
+            "pages": [
+              "k21-node",
             ]
           }
         ]
