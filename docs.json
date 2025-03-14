@@ -21,6 +21,12 @@
               "playground",
               "faqs"
             ]
+          },
+          {
+            "group": "SDKs",
+            "pages": [
+              "sdks/k21-node"
+            ]
           }
         ]
       }
