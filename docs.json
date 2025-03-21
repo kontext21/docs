@@ -27,6 +27,14 @@
             "pages": [
               "sdks/k21-node"
             ]
+          },
+          {
+            "group": "Context Concepts",
+            "pages": [
+              "concepts/capture",
+              "concepts/processing",
+              "concepts/links"
+            ]
           }
         ]
       }
