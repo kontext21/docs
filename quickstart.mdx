@@ -5,22 +5,30 @@ description: 'Start building truly user-centric software in under 5 minutes'
 
 ## Install
 
-```bash
+```sh
 npm install @kontext21/k21
 ```
 
-## Initialize
+## Use
 
-```bash
-k21.query(1)
+```javascript
+const { K21Pipeline } = require('@kontext21/k21');
+
+const k21 = new K21Pipeline();
+const result = await k21.run()
+// defaults to screen capture 
+// and extract text with local OCR
+
+console.log(result)
 ```
+
 Returns all data currently on the screen.
 
 ## Components of our SDK
 
-- [k21 SDK](https://github.com/kontext21/k21) is the main repository for the SDK. [Readme](https://github.com/kontext21/k21/blob/main/README.md).
+- [k21](https://github.com/kontext21/k21) is the main repository for the SDK. [Readme](https://github.com/kontext21/k21/blob/main/README.md).
   - k21-screen - A CLI tool to handle screen captures
   - k21-processor - A CLI tool to handle processing of screen captures
   - k21-server - A server to handle the processing of screen captures with the processor and returning the results
 - [k21-node](https://github.com/kontext21/k21-node) - A Node.js Library for the SDK
-- [K21-node sample code](https://github.com/kontext21/k21-node-sample) - Sample code for using the k21-node library
+- [K21-node-sample](https://github.com/kontext21/k21-node-sample) - Sample code for using the k21-node library

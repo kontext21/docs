@@ -29,27 +29,21 @@ K21 SDK makes it easy to capture & retrieve end-user context from sources like t
 
 ## Install
 
-```
+```sh
 npm install @kontext21/k21
 ```
 
-## Initialize
+## Use
 
-```
-import { kontext } from 'k21'
+```javascript
+const { K21Pipeline } = require('@kontext21/k21');
 
-kontext = kontext.capture()
-            .ocr()
-            .start()
-```
+const k21 = new K21Pipeline();
+const result = await k21.run()
+// defaults to screen capture 
+// and extract text with local OCR
 
-## Consume
-
-```
-const buttonClick = (): void => {
-  const frequentWord = wordCount(context.all()).top(1);
-  alert(`The most frequent word is: ${frequentWord}`);
-};
+console.log(result)
 ```
 
 # Next Steps
