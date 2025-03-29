@@ -19,10 +19,6 @@
               "introduction",
               "quickstart",
               "faqs"
-            ],
-            "group": "SDKs",
-            "pages": [
-              "k21-node",
             ]
           },
           {
