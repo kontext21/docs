@@ -22,9 +22,11 @@
             ]
           },
           {
-            "group": "SDKs",
+            "group": "K21 Node SDK",
             "pages": [
-              "sdks/k21-node"
+              "sdks/k21-node/K21Pipeline",
+              "sdks/k21-node/CaptureConfig",
+              "sdks/k21-node/ImageData"
             ]
           },
           {
