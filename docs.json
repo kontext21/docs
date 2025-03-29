@@ -11,14 +11,13 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Docs",
         "groups": [
           {
             "group": "Get Started",
             "pages": [
               "introduction",
               "quickstart",
-              "playground",
               "faqs"
             ],
             "group": "SDKs",
@@ -41,22 +40,14 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Playground",
+        "pages": [
+          "playground"
+        ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://docs.kontext21.com",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://discord.gg/qYUADWRMRX",
-          "icon": "discord"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
