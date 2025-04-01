@@ -1,33 +1,18 @@
 ---
-title: 'Capturing & Installation'
-description: ''
+title: 'Capturing'
+description: 'Different methods of capturing user context'
 ---
 
-## Sources of Context
+## Overview
 
-- Screen
-- Coming soon:
-    - OS Integrations
-    - Cloud/Web integrations
-    - Browser Extensions
-    - Bring your own data
+K21 captures user context through various methods, with screen capture as the primary method. The system is designed for efficiency and minimal system impact.
 
-## How to get the “context” of your users?
+## Capture Sources
 
-- If you already have a desktop installer, then implement our SDK, the binaries will be included into your installer.
-- if you build a webapp or low-code dev without installer you can:
-    - Web Capture (start a screenshare)
-    - Use our installer
-        - Use Kontext21.exe - Ready to go, fastest option
-        - Whitelabel Installer - Most useful if you are a webapp and want a branded Installer MyApp Tracker.exe - We take care of everything
-        - For installer we also take care of “always running in the back”, trouble shooting & error logs & auto-updates, certification and permissions
-    - "Bring your own data" You implement your own capturing logic, then File Upload Screenshot or .mp4 to a cloud procressor
+### Screen Capture
 
+Screen capture is the core method for understanding user interactions. K21 maintains low system impact while supporting configurable frame rates and flexible storage options. The system adapts to both real-time monitoring and periodic analysis needs.
 
-## Languages:
+### Future Capture Methods
 
-Rust, Javascript/Typescript, coming soon Pythin, C# and Java
-
-## Trouble shooting & Logs
-
-K21 SDK integrates with existing logging/error analytics/telemetry.
+Additional capture methods are in development. Browser Extensions will provide direct DOM access and web interaction tracking. System Integration will track application focus and window management. Audio Capture will support voice commands and meeting recordings. Cloud/Web Integration will enable cross-platform awareness and service synchronization.

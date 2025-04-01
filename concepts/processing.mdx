@@ -1,13 +1,22 @@
 ---
 title: 'Processing'
-description: 'Processing is any work on the captured data in isolation For example a single screen capture.'
+description: 'Methods for processing captured content'
 ---
 
-## Processors
+## Overview
 
-- OCR (native OS OCR and Tesseract)
-- Vision LM
+K21 processes captured content through OCR and Vision models to extract meaningful insights from user interactions.
 
-Processor can run locally or in the cloud.
+## Processing Methods
 
-Processor forwards data to the Contextualize it further (with it historic data or other streams of context).
+### OCR (Optical Character Recognition)
+
+OCR extracts text from captured screens using multiple engines. The system supports native OS OCR and Tesseract, with multi-language capabilities and spatial awareness. Each extraction includes confidence scoring for accuracy assessment.
+
+### Vision Models
+
+Vision models provide deeper understanding of screen content. The system analyzes screen layouts, recognizes UI elements, and tracks user interactions. Semantic content understanding enables comprehensive interface analysis.
+
+### Future Processing
+
+Additional processing capabilities are in development. The system will support custom processor plugins and multi-modal processing. Audio transcription and temporal analysis will enhance context understanding.
