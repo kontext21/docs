@@ -36,9 +36,11 @@ npm install @kontext21/k21
 ## Use
 
 ```javascript
-const { K21Pipeline } = require('@kontext21/k21');
+const { K21 } = require('@kontext21/k21');
 
-const k21 = new K21Pipeline();
+const k21 = new K21();
+k21.setCapturer()
+k21.setProcessor()
 const result = await k21.run()
 // defaults to screen capture 
 // and extract text with local OCR

@@ -1,0 +1,47 @@
+# Interface: ProcessedFrameData
+
+Defined in: [types.ts:62](https://github.com/kontext21/k21-node/blob/e2b37dbc35961e3180faf88c067d979b8be74bd2/k21/types.ts#L62)
+
+Represents a processed frame from the screen capture
+Contains metadata about the capture time, frame sequence,
+and the results of processing (like OCR text)
+
+## Properties
+
+### content
+
+> **content**: `string`
+
+Defined in: [types.ts:68](https://github.com/kontext21/k21-node/blob/e2b37dbc35961e3180faf88c067d979b8be74bd2/k21/types.ts#L68)
+
+Processed content from the frame (e.g., OCR text)
+
+***
+
+### frameNumber
+
+> **frameNumber**: `number`
+
+Defined in: [types.ts:66](https://github.com/kontext21/k21-node/blob/e2b37dbc35961e3180faf88c067d979b8be74bd2/k21/types.ts#L66)
+
+Sequential number of the frame in the capture sequence
+
+***
+
+### processingType
+
+> **processingType**: `string`
+
+Defined in: [types.ts:70](https://github.com/kontext21/k21-node/blob/e2b37dbc35961e3180faf88c067d979b8be74bd2/k21/types.ts#L70)
+
+Type of processing applied to the frame (e.g., "OCR", "CLASSIFICATION")
+
+***
+
+### timestamp
+
+> **timestamp**: `string`
+
+Defined in: [types.ts:64](https://github.com/kontext21/k21-node/blob/e2b37dbc35961e3180faf88c067d979b8be74bd2/k21/types.ts#L64)
+
+ISO timestamp when the frame was captured

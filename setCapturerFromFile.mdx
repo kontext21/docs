@@ -1,0 +1,70 @@
+---
+title: 'setCapturerFromFile'
+description: 'Configure K21 to process existing video or image files'
+---
+
+The `setCapturerFromFile` method configures K21 to process an existing video (.mp4) or image (.png) file instead of capturing from screen. This is useful when you want to analyze pre-recorded content.
+
+## Usage
+
+```javascript
+const k21 = new K21();
+
+k21.setCapturerFromFile({
+  file: './recordings/screen-capture.mp4'
+});
+```
+
+## CaptureFromFileConfig Interface
+
+The configuration object requires the following parameter:
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `file` | `string` | Yes | Path to the file to be processed. Must be either .mp4 or .png |
+
+## Supported File Types
+
+- Video files (`.mp4`)
+- Image files (`.png`)
+
+## Examples
+
+### Process a Video File
+```javascript
+k21.setCapturerFromFile({
+  file: './captures/meeting-recording.mp4'
+});
+```
+
+### Process a Screenshot
+```javascript
+k21.setCapturerFromFile({
+  file: './screenshots/dashboard.png'
+});
+```
+
+## Error Handling
+
+The method will throw an error in these cases:
+- If a screen capturer is already set
+- If the file path is not provided
+- If the file type is not supported (must be .mp4 or .png)
+- If the file path is invalid
+
+```javascript
+try {
+  k21.setCapturerFromFile({
+    file: './recordings/video.avi' // Unsupported format
+  });
+} catch (error) {
+  console.error('Failed to set file capturer:', error.message);
+  // Error: File must be either .mp4 or .png
+}
+```
+
+## Important Notes
+
+1. You cannot use `setCapturerFromFile` if you've already set a screen capturer using `setCapturer`
+2. The file must exist and be accessible when the method is called
+3. Make sure you have appropriate permissions to read the file

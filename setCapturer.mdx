@@ -1,0 +1,101 @@
+---
+title: 'setCapturer'
+description: 'Configure screen capture settings in K21'
+---
+
+The `setCapturer` method configures how K21 captures screen content. It allows you to control parameters like frame rate, duration, and where to save the captured content.
+
+## Usage
+
+```javascript
+const k21 = new K21();
+
+// Use default settings
+k21.setCapturer();
+
+// Custom configuration
+k21.setCapturer({
+  fps: 2,
+  duration: 30,
+  saveVideoTo: '/path/to/videos',
+  videoChunkDuration: 30
+});
+```
+
+## CaptureConfig Interface
+
+The configuration object accepts the following parameters:
+
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `fps` | `number` | `1` | Frames per second for capture |
+| `duration` | `number` | `10` | Total duration of capture in seconds |
+| `saveScreenshotTo` | `string` | `undefined` | Path where screenshots should be saved. If not provided, screenshots won't be saved |
+| `saveVideoTo` | `string` | `undefined` | Path where video should be saved. If not provided, video won't be saved |
+| `videoChunkDuration` | `number` | `60` | Duration of each video chunk in seconds |
+
+## Default Values
+
+If you call `setCapturer()` without any configuration, these default values will be used:
+- fps: 1
+- duration: 10
+- saveVideo: false
+- saveVideoTo: ''
+- videoChunkDuration: 60
+- saveScreenshot: false
+- saveScreenshotTo: ''
+
+## Examples
+
+### Basic Screen Capture
+```javascript
+k21.setCapturer();
+// Uses default settings: 1 fps for 10 seconds
+```
+
+### High-Frame Rate Capture
+```javascript
+k21.setCapturer({
+  fps: 30,
+  duration: 5
+});
+// Captures at 30 fps for 5 seconds
+```
+
+### Save Video with Chunks
+```javascript
+k21.setCapturer({
+  fps: 1,
+  duration: 3600, // 1 hour
+  saveVideoTo: './captures',
+  videoChunkDuration: 300 // 5-minute chunks
+});
+// Captures for 1 hour, saving video in 5-minute chunks
+```
+
+### Save Screenshots Only
+```javascript
+k21.setCapturer({
+  fps: 0.2, // One frame every 5 seconds
+  duration: 600,
+  saveScreenshotTo: './screenshots'
+});
+// Takes a screenshot every 5 seconds for 10 minutes
+```
+
+## Error Handling
+
+The method will throw an error in these cases:
+- If a file capturer is already set
+- If the provided video or screenshot paths are invalid
+- If an uploader is already configured
+
+```javascript
+try {
+  k21.setCapturer({
+    saveVideoTo: '/invalid/path'
+  });
+} catch (error) {
+  console.error('Failed to set capturer:', error.message);
+}
+```

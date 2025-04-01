@@ -1,0 +1,56 @@
+[**@kontext21/k21**](../README.md)
+
+***
+
+[@kontext21/k21](../globals.md) / K21
+
+# Class: K21
+
+Defined in: [k21.ts:5](https://github.com/kontext21/k21-node/blob/e2b37dbc35961e3180faf88c067d979b8be74bd2/k21/k21.ts#L5)
+
+## Constructors
+
+### Constructor
+
+> **new K21**(): `K21`
+
+Defined in: [k21.ts:22](https://github.com/kontext21/k21-node/blob/e2b37dbc35961e3180faf88c067d979b8be74bd2/k21/k21.ts#L22)
+
+#### Returns
+
+`K21`
+
+## Methods
+
+### run()
+
+> **run**(): `Promise`&lt;`ProcessedFrameData`[]&gt;
+
+Defined in: [k21.ts:107](https://github.com/kontext21/k21-node/blob/e2b37dbc35961e3180faf88c067d979b8be74bd2/k21/k21.ts#L107)
+
+Executes the screen capture and processing pipeline
+
+#### Returns
+
+`Promise`&lt;`ProcessedFrameData`[]&gt;
+
+Promise&lt;ProcessedFrameData[]&gt; Array of processed frames with their metadata:
+- timestamp: ISO timestamp of capture
+- frameNumber: Sequential frame number
+- content: Processed content (e.g., OCR text)
+- processingType: Type of processing applied
+
+#### Throws
+
+Error if neither screen capturer nor file capturer is set
+
+#### Throws
+
+Error if screen capture or processing fails
+
+#### Example
+
+```ts
+
+const results = await pipeline.run();
+// Returns empty array if no processor is set

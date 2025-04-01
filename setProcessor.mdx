@@ -1,0 +1,129 @@
+---
+title: 'setProcessor'
+description: 'Configure image processing settings in K21'
+---
+
+The `setProcessor` method configures how K21 processes captured images or video frames. It supports both OCR (Optical Character Recognition) and Vision-based processing, with customizable settings for each.
+
+## Usage
+
+```javascript
+const k21 = new K21();
+
+// Use default OCR settings
+k21.setProcessor();
+
+// Custom OCR configuration
+k21.setProcessor({
+  processingType: "OCR",
+  ocrConfig: {
+    ocrModel: "tesseract",
+    boundingBoxes: true
+  }
+});
+```
+
+## ProcessorConfig Interface
+
+The main configuration object accepts the following parameters:
+
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `processingType` | `string` | `'OCR'` | Type of processing to apply ("OCR" or "Vision") |
+| `ocrConfig` | `OcrConfig` | See below | Configuration for OCR-based processing |
+| `visionConfig` | `VisionConfig` | See below | Configuration for vision-based processing |
+
+### OcrConfig Interface
+
+Configuration options for OCR processing:
+
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `ocrModel` | `string` | `'default'` | OCR model to use (e.g., "tesseract", "native", "default") |
+| `boundingBoxes` | `boolean` | `true` | Whether to include text bounding box coordinates in results |
+| `dpi` | `number` | - | Dots per inch for image processing. Higher values for smaller text |
+| `psm` | `number` | - | Page Segmentation Mode - controls how the page is analyzed |
+| `oem` | `number` | - | OCR Engine Mode - controls which engine(s) are used |
+
+### VisionConfig Interface
+
+Configuration options for vision-based processing:
+
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `url` | `string` | - | Base URL for the vision API endpoint |
+| `apiKey` | `string` | - | Authentication key for the vision API |
+| `model` | `string` | - | Model identifier to use for vision processing |
+| `prompt` | `string` | - | Optional prompt to guide the vision model's analysis |
+
+## Default Values
+
+If you call `setProcessor()` without any configuration, these default values will be used:
+```javascript
+{
+  processingType: 'OCR',
+  ocrConfig: {
+    ocrModel: 'default',
+    boundingBoxes: true
+  }
+}
+```
+
+## Examples
+
+### Basic OCR Processing
+```javascript
+k21.setProcessor({
+  processingType: "OCR"
+});
+```
+
+### Advanced OCR Configuration
+```javascript
+k21.setProcessor({
+  processingType: "OCR",
+  ocrConfig: {
+    ocrModel: "tesseract",
+    boundingBoxes: true,
+    dpi: 300,
+    psm: 3,
+    oem: 1
+  }
+});
+```
+
+### Vision API Processing
+```javascript
+k21.setProcessor({
+  processingType: "Vision",
+  visionConfig: {
+    url: "https://api.vision-service.com/v1",
+    apiKey: "your-api-key",
+    model: "gpt-4-vision",
+    prompt: "Describe the main activities visible in this screen capture"
+  }
+});
+```
+
+### Mixed Processing
+```javascript
+k21.setProcessor({
+  processingType: "OCR",
+  ocrConfig: {
+    ocrModel: "native",
+    boundingBoxes: true
+  },
+  visionConfig: {
+    model: "gpt-4-vision",
+    prompt: "Analyze the text layout and content"
+  }
+});
+```
+
+## Important Notes
+
+1. The `processingType` determines which configuration will be used (`ocrConfig` or `visionConfig`)
+2. When using vision-based processing, make sure you have valid API credentials
+3. OCR settings like `psm` and `oem` are specific to certain OCR engines (like Tesseract)
+4. Higher DPI values can improve accuracy for small text but may increase processing time
+5. Vision API processing may incur additional costs depending on your provider

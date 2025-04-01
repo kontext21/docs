@@ -1,0 +1,141 @@
+---
+title: 'run'
+description: 'Execute the K21 capture and processing pipeline'
+---
+
+The `run` method executes the configured capture and processing pipeline. It can handle different combinations of capture sources (screen or file) and processing methods (OCR or Vision).
+
+## Usage
+
+```javascript
+const k21 = new K21();
+
+// Configure capture and processing
+k21.setCapturer();
+k21.setProcessor();
+
+// Run the pipeline
+const results = await k21.run();
+```
+
+## Return Type: ProcessedFrameData[]
+
+The method returns an array of `ProcessedFrameData` objects, each representing a processed frame:
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `timestamp` | `string` | ISO timestamp when the frame was captured |
+| `frameNumber` | `number` | Sequential number of the frame in the capture sequence |
+| `content` | `string` | Processed content from the frame (e.g., OCR text) |
+| `processingType` | `string` | Type of processing applied (e.g., "OCR", "CLASSIFICATION") |
+
+## Examples
+
+### Basic Screen Capture with OCR
+```javascript
+const k21 = new K21();
+
+k21.setCapturer({
+  fps: 1,
+  duration: 5
+});
+
+k21.setProcessor({
+  processingType: "OCR"
+});
+
+const results = await k21.run();
+console.log(results);
+```
+
+Example output:
+```javascript
+[
+  {
+    timestamp: "2024-04-01T10:30:00Z",
+    frameNumber: 1,
+    content: "Meeting notes: Project timeline discussion...",
+    processingType: "OCR"
+  },
+  {
+    timestamp: "2024-04-01T10:30:01Z",
+    frameNumber: 2,
+    content: "Action items: 1. Update roadmap...",
+    processingType: "OCR"
+  }
+]
+```
+
+### Process Existing File
+```javascript
+const k21 = new K21();
+
+k21.setCapturerFromFile({
+  file: './screenshots/dashboard.png'
+});
+
+k21.setProcessor({
+  processingType: "Vision",
+  visionConfig: {
+    model: "gpt-4-vision",
+    prompt: "Describe the dashboard content"
+  }
+});
+
+const results = await k21.run();
+```
+
+### Capture Only (No Processing)
+```javascript
+const k21 = new K21();
+
+k21.setCapturer({
+  fps: 1,
+  duration: 3,
+  saveVideoTo: './captures'
+});
+
+const results = await k21.run();
+// Returns empty array since no processor is set
+```
+
+## Error Handling
+
+The method will throw an error in these cases:
+- If neither screen capturer nor file capturer is set
+- If screen capture or processing fails
+- If the configuration state is invalid
+
+```javascript
+try {
+  const results = await k21.run();
+} catch (error) {
+  console.error('Pipeline execution failed:', error.message);
+}
+```
+
+## Pipeline Behavior
+
+The `run` method handles different configurations:
+
+1. **Capturer Only**
+   - Captures frames but returns empty array
+   - Useful for saving captures without processing
+
+2. **Capturer + Processor**
+   - Captures frames and processes them
+   - Returns array of processed frames
+
+3. **File Capturer + Processor**
+   - Processes existing file
+   - Returns array with processed results
+
+## Important Notes
+
+1. The method is asynchronous and returns a Promise
+2. Frame numbers start from 1 and increment sequentially
+3. Timestamps are in ISO format
+4. Content format depends on the processing type:
+   - OCR: Extracted text
+   - Vision: Model-specific output
+5. Empty array is returned if no processor is configured

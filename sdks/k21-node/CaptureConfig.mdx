@@ -1,96 +1,61 @@
+[**@kontext21/k21**](../README.md)
+
+***
+
+[@kontext21/k21](../globals.md) / CaptureConfig
+
 # Interface: CaptureConfig
 
-Defined in: [k21.ts:24](https://github.com/kontext21/k21-node/blob/ad3f9a0edb0bb9a30641002250cab933968ad5b6/k21/k21.ts#L24)
+Defined in: [types.ts:3](https://github.com/kontext21/k21-node/blob/e2b37dbc35961e3180faf88c067d979b8be74bd2/k21/types.ts#L3)
 
 Configuration options for screen capture
-Controls capture parameters, file saving behavior,
-and output locations for video and screenshots
-
-## Example
-
-```ts
-// Basic capture without saving
-const config: CaptureConfig = {
-  fps: 1,
-  recordLengthInSeconds: 60
-}
-
-// Capture with video saving
-const config: CaptureConfig = {
-  fps: 1,
-  recordLengthInSeconds: 60,
-  saveVideo: true,
-  outputDirVideo: '/path/to/videos',
-  videoChunkDurationInSeconds: 60
-}
-```
 
 ## Properties
 
-### fps?
+### duration?
 
-> `optional` **fps**: `number`
+> `optional` **duration**: `number`
 
-Defined in: [k21.ts:26](https://github.com/kontext21/k21-node/blob/ad3f9a0edb0bb9a30641002250cab933968ad5b6/k21/k21.ts#L26)
-
-Frames per second for capture. Default: 1
-
-***
-
-### outputDirScreenshot?
-
-> `optional` **outputDirScreenshot**: `string`
-
-Defined in: [k21.ts:32](https://github.com/kontext21/k21-node/blob/ad3f9a0edb0bb9a30641002250cab933968ad5b6/k21/k21.ts#L32)
-
-Directory path for saving screenshots. Required if saveScreenshot is true
-
-***
-
-### outputDirVideo?
-
-> `optional` **outputDirVideo**: `string`
-
-Defined in: [k21.ts:36](https://github.com/kontext21/k21-node/blob/ad3f9a0edb0bb9a30641002250cab933968ad5b6/k21/k21.ts#L36)
-
-Directory path for saving video files. Required if saveVideo is true
-
-***
-
-### recordLengthInSeconds?
-
-> `optional` **recordLengthInSeconds**: `number`
-
-Defined in: [k21.ts:28](https://github.com/kontext21/k21-node/blob/ad3f9a0edb0bb9a30641002250cab933968ad5b6/k21/k21.ts#L28)
+Defined in: [types.ts:7](https://github.com/kontext21/k21-node/blob/e2b37dbc35961e3180faf88c067d979b8be74bd2/k21/types.ts#L7)
 
 Total duration of capture in seconds. Default: 10
 
 ***
 
-### saveScreenshot?
+### fps?
 
-> `optional` **saveScreenshot**: `boolean`
+> `optional` **fps**: `number`
 
-Defined in: [k21.ts:30](https://github.com/kontext21/k21-node/blob/ad3f9a0edb0bb9a30641002250cab933968ad5b6/k21/k21.ts#L30)
+Defined in: [types.ts:5](https://github.com/kontext21/k21-node/blob/e2b37dbc35961e3180faf88c067d979b8be74bd2/k21/types.ts#L5)
 
-Whether to save screenshots during capture. Default: false
-
-***
-
-### saveVideo?
-
-> `optional` **saveVideo**: `boolean`
-
-Defined in: [k21.ts:34](https://github.com/kontext21/k21-node/blob/ad3f9a0edb0bb9a30641002250cab933968ad5b6/k21/k21.ts#L34)
-
-Whether to save video during capture. Default: false
+Frames per second for capture. Default: 1
 
 ***
 
-### videoChunkDurationInSeconds?
+### saveScreenshotTo?
 
-> `optional` **videoChunkDurationInSeconds**: `number`
+> `optional` **saveScreenshotTo**: `string`
 
-Defined in: [k21.ts:38](https://github.com/kontext21/k21-node/blob/ad3f9a0edb0bb9a30641002250cab933968ad5b6/k21/k21.ts#L38)
+Defined in: [types.ts:9](https://github.com/kontext21/k21-node/blob/e2b37dbc35961e3180faf88c067d979b8be74bd2/k21/types.ts#L9)
 
-Duration of each video chunk in seconds. Required if saveVideo is true. Default: 60
+Path where screenshots should be saved. If not provided, screenshots won't be saved
+
+***
+
+### saveVideoTo?
+
+> `optional` **saveVideoTo**: `string`
+
+Defined in: [types.ts:11](https://github.com/kontext21/k21-node/blob/e2b37dbc35961e3180faf88c067d979b8be74bd2/k21/types.ts#L11)
+
+Path where video should be saved. If not provided, video won't be saved
+
+***
+
+### videoChunkDuration?
+
+> `optional` **videoChunkDuration**: `number`
+
+Defined in: [types.ts:13](https://github.com/kontext21/k21-node/blob/e2b37dbc35961e3180faf88c067d979b8be74bd2/k21/types.ts#L13)
+
+Duration of each video chunk in seconds. Default: 60

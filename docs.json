@@ -24,9 +24,24 @@
           {
             "group": "K21 Node SDK",
             "pages": [
-              "sdks/k21-node/K21Pipeline",
-              "sdks/k21-node/CaptureConfig",
-              "sdks/k21-node/ImageData"
+              {
+                "group": "Methods",
+                "pages": [
+                  "setCapturer",
+                  "setCapturerFromFile",
+                  "setProcessor",
+                  "run"
+                ]
+              },
+              {
+                "group": "Entities",
+                "pages": [
+                  "sdks/k21-node/K21",
+                  "sdks/k21-node/CaptureConfig",
+                  "sdks/k21-node/ProcessorConfig",
+                  "sdks/k21-node/ProcessedFrameData"
+                ]
+              }
             ]
           },
           {

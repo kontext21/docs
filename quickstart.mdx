@@ -10,16 +10,28 @@ npm install @kontext21/k21
 ```
 
 ## Use
-
 ```javascript
-const { K21Pipeline } = require('@kontext21/k21');
-
-const k21 = new K21Pipeline();
+const { K21 } = require('@kontext21/k21');
+const k21 = new K21();
+k21.setCapturer(); // defaults to 10s screen capture
+k21.setProcessor(); // extract text with local OCR
 const result = await k21.run()
-// defaults to screen capture 
-// and extract text with local OCR
-
 console.log(result)
+```
+## Sample Log Output
+```json
+ {
+   "message": "Successfully processed 1 video frames",
+   "success": true,
+   "result": [
+     {
+      "timestamp": "2025-03-05 13:44:12",
+      "framenumber": 1,
+      "content": "OPP Pv Vv k21-SCREEN ~_.github / workflows 25 ...",
+      "processingType" : "OCR"
+     }
+    ]
+ }
 ```
 
 Returns all data currently on the screen.
