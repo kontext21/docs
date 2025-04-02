@@ -32,4 +32,5 @@ Install our Github App to auto propagate changes from your repo to your deployme
 - Page loads as a 404 - Make sure you are running in a folder with `docs.json`
 
 ### Generate Docs MDX in k21-node
-npx typedoc --plugin typedoc-plugin-markdown k21/k21.ts
+- npx typedoc --plugin typedoc-plugin-markdown k21/k21.ts
+- replace <ImageData[]> with \<ImageData[]\> in K21Pipeline.mdx
