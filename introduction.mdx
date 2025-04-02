@@ -7,46 +7,60 @@ Kontext21 is the AI infrastructure layer for user context.
 
 K21 SDK makes it easy to capture & retrieve end-user context from sources like their screen, browser and many more. The contextualized, structured data can then be used to personalize software and AI apps.
 
+| Integration | Status | Description |
+|-------------|---------|-------------|
+| Screen Capture | Available | Capture and analyze screen content in real-time |
+| Communication | Coming Soon | Process emails, messages, and video calls |
+| Documents | Coming Soon | Analyze files, spreadsheets, and presentations |
+| Business Apps | Coming Soon | Connect with CRM, project management, and other tools |
+
 <AccordionGroup>
-  <Accordion title="Example - AI Task & Time Tracking" defaultOpen={false} icon="circle-info">
-    * Todo Inc. offers a todo & time tracking web app
+  <Accordion title="Use Cases" defaultOpen={false} icon="lightbulb">
+    <AccordionGroup>
+      <Accordion title="Automated Time Tracking" defaultOpen={false} icon="clock">
+        * LegalTodo Inc. offers a time tracking app for law firms
 
-    * Todo's users are frustrated to manually start & stop tasks <br /> \<> Instead they expect AI and automation!
+        * Lawyers waste 30% of their time manually tracking tasks <br /> \<> They need automation to focus on their work
 
-    * With Kontext21 Todo can build automated task tracking easily
+        * With Kontext21, LegalTodo Inc. built smart time tracking that automatically detects and logs billable hours
+      </Accordion>
+
+      <Accordion title="Team Performance Analytics" defaultOpen={false} icon="chart-line">
+        * DevMetrics provides team performance analytics for engineering teams
+
+        * Managers struggle to assess real team capacity <br /> \<> They need accurate insights into actual work patterns
+
+        * With Kontext21, DevMetrics built automated capacity analysis that tracks coding patterns and productivity metrics
+      </Accordion>
+
+      <Accordion title="Auto Documentation" defaultOpen={false} icon="book">
+        * DocFlow offers documentation management for software teams
+
+        * Developers skip documentation to focus on coding <br /> \<> They need automated documentation that stays current
+
+        * With Kontext21, DocFlow built smart documentation that automatically updates based on code changes and usage patterns
+      </Accordion>
+
+      <Accordion title="Relationship Intelligence" defaultOpen={false} icon="users">
+        * RelateIQ provides relationship management for sales teams
+
+        * Sales reps lose track of key contacts and relationships <br /> \<> They need automated relationship mapping and insights
+
+        * With Kontext21, RelateIQ built smart relationship graphs that automatically track and analyze interactions with contacts across emails, meetings, and documents
+      </Accordion>
+    </AccordionGroup>
   </Accordion>
 
   <Accordion title="Questions you can answer with K21 SDK" defaultOpen={false} icon="question">
-    K21 SDK let’s developers answer questions like:
+    K21 SDK let's developers answer questions like:
 
-    * “What is my user currently doing?”
+    * "What is my user currently doing?"
 
-    * “Which contacts are important to her?”
+    * "Which contacts are important to her?"
 
-    * “What is his most likely next action?”
+    * "What is his most likely next action?"
   </Accordion>
 </AccordionGroup>
-
-## Install
-
-```sh
-npm install @kontext21/k21
-```
-
-## Use
-
-```javascript
-const { K21 } = require('@kontext21/k21');
-
-const k21 = new K21();
-k21.setCapturer()
-k21.setProcessor()
-const result = await k21.run()
-// defaults to screen capture 
-// and extract text with local OCR
-
-console.log(result)
-```
 
 # Next Steps
 <CardGroup cols={2}>
@@ -60,11 +74,13 @@ console.log(result)
 
   <Card title="Playground" icon="image" href="/playground" />
 
+  <Card title="Sample Code" icon="code" href="/samples">
+    Check out working examples
+  </Card>
 </CardGroup>
+
 # Let's build together
-
 <CardGroup cols={2}>
-
   <Card title="Find us on GitHub" icon="github" href="https://github.com/kontext21/context/" />
 
   <Card title="Join us on Discord" icon="discord" href="https://discord.gg/qYUADWRMRX" />
