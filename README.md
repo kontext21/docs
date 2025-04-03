@@ -1,12 +1,8 @@
-# Mintlify Starter Kit
+# Kontext21 Docs
 
-Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including
+These are the docs for the K21 SDK and samples. They are hosted at https://docs.kontext21.com/
 
-- Guide pages
-- Navigation
-- Customizations
-- API Reference pages
-- Use of popular components
+Feel free to contribute any feedback 🌈
 
 ### Development
 
